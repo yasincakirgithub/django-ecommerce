@@ -1,0 +1,82 @@
+{% extends 'layouts/main_layout.html' %}
+
+{% block customTitle %}
+  Blog Detail
+{% endblock %}
+
+{% block pageContent %}
+  <section class="bgwhite p-t-60 p-b-25">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-9 p-b-80">
+          <div class="p-r-50 p-r-0-lg">
+            <div class="p-b-40">
+              <div class="blog-detail-img wrap-pic-w">
+                <img src="{{ blog.image.url }}" alt="IMG-BLOG" />
+              </div>
+              <div class="blog-detail-txt p-t-33">
+                <h4 class="p-b-11 m-text24">{{ blog.title }}</h4>
+                <div class="s-text8 flex-w flex-m p-b-21">
+                  <span>
+                    By {{ blog.created_by.first_name }} {{ blog.created_by.last_name }}
+                    <span class="m-l-3 m-r-6">|</span>
+                  </span>
+                  <span>
+                    {{ blog.created_at }}
+                    <span class="m-l-3 m-r-6">|</span>
+                  </span>
+                  {% if blog.category %}
+                    <span>
+                      {{ blog.category.name }}
+                      <span class="m-l-3 m-r-6">|</span>
+                    </span>
+                  {% endif %}
+                  <span>{{ blog.comments.all|length }} Comments</span>
+                </div>
+                <p class="p-b-25">{{ blog.text }}</p>
+              </div>
+              <div class="flex-m flex-w p-t-20">
+                <span class="s-text20 p-r-20">Tags</span>
+                <div class="wrap-tags flex-w">
+                  {% for tag in blog.tags.all %}
+                    <a href="{% url 'blog-page' %}?blog-tag={{ tag.id }}" class="tag-item">{{ tag.name }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            {% if request.user.is_authenticated %}
+              <h4 class="p-b-11">Comments</h4>
+              {% for comment in blog.comments.all %}
+                <div class="card p-3 mt-2">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center">
+                      <img src="{{ comment.user.profile_img.url }}" width="30" class="user-img rounded-circle mr-2" />
+                      <span><small class="font-weight-bold text-primary">{{ comment.user.first_name }} {{ comment.user.last_name }}</small> <small class="font-weight-bold">{{ comment.text }}</small></span>
+                    </div>
+                    <small>{{ comment.created_at }}</small>
+                  </div>
+                </div>
+              {% endfor %}
+              
+              <form method="POST" action="{% url 'blog-detail-page' blog.slug %}" class="leave-comment">
+                {% csrf_token %}
+                <h4 class="m-text25 p-b-14 p-t-20">Leave a Comment</h4>
+                {% if comment_form.text.errors %} <div class="alert alert-danger"> {{ comment_form.text.errors }}</div>{% endif %}
+                {{ comment_form.text }}
+                <div class="w-size24">
+                  <button type="submit" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Post Comment</button>
+                </div>
+              </form>
+            {% else %}
+              <p class="p-b-25">Please log in before you can comment or view.</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 p-b-80">
+          {% include 'blog/right_side_bar.html' %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

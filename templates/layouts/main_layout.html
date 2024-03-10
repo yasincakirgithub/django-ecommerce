@@ -1,0 +1,384 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+
+    <style>.LGLeeN-keyboard-shortcuts-view{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}.LGLeeN-keyboard-shortcuts-view table,.LGLeeN-keyboard-shortcuts-view tbody,.LGLeeN-keyboard-shortcuts-view td,.LGLeeN-keyboard-shortcuts-view tr{background:inherit;border:none;margin:0;padding:0}.LGLeeN-keyboard-shortcuts-view table{display:table}.LGLeeN-keyboard-shortcuts-view tr{display:table-row}.LGLeeN-keyboard-shortcuts-view td{-moz-box-sizing:border-box;box-sizing:border-box;display:table-cell;color:#000;padding:6px;vertical-align:middle;white-space:nowrap}.LGLeeN-keyboard-shortcuts-view td:first-child{text-align:end}.LGLeeN-keyboard-shortcuts-view td kbd{background-color:#e8eaed;border-radius:2px;border:none;-moz-box-sizing:border-box;box-sizing:border-box;color:inherit;display:inline-block;font-family:Google Sans Text,Roboto,Arial,sans-serif;line-height:16px;margin:0 2px;min-height:20px;min-width:20px;padding:2px 4px;position:relative;text-align:center}</style>
+    <style>.gm-control-active>img{-webkit-box-sizing:content-box;box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:focus>img:nth-child(1),.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1),.gm-control-active:disabled>img:nth-child(1){display:none}.gm-control-active:focus>img:nth-child(2),.gm-control-active:hover>img:nth-child(2){display:block}.gm-control-active:active>img:nth-child(3){display:block}.gm-control-active:disabled>img:nth-child(4){display:block}sentinel{}</style>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&amp;lang=en">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&amp;lang=en">
+    <style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}.gm-ui-hover-effect>span{background-color:#000}@media (forced-colors:active),(prefers-contrast:more){.gm-ui-hover-effect>span{background-color:ButtonText}}sentinel{}</style>
+    <style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{font-size:10px;-webkit-box-sizing:border-box;box-sizing:border-box}.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span{outline-offset:3px}sentinel{}</style>
+    <style>@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
+    <style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;-webkit-box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}sentinel{}
+    </style>
+    <style>.gm-style-moc{background-color:rgba(0,0,0,.45);pointer-events:none;text-align:center;-webkit-transition:opacity ease-in-out;transition:opacity ease-in-out}.gm-style-mot{color:white;font-family:Roboto,Arial,sans-serif;font-size:22px;margin:0;position:relative;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%)}sentinel{}
+    </style>
+    <style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/themify/themify-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/elegant-font/html-css/style.css' %}">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <style>
+
+      .errorlist{
+        font-size: 10px;
+      }
+      
+    </style>
+    
+    <title>{% block customTitle %}{% endblock  %}</title>
+
+    {% block customCss %}
+
+    {% endblock  %}
+
+  </head>
+
+  <body>
+    <header class="header1">
+      <div class="container-menu-header" style="top: 0px;">
+        <div class="topbar">
+          <div class="topbar-social">
+            {% for social_obj in social_objs  %}
+              <a target="_blank" href="{{social_obj.url}}" class="topbar-social-item fa fa-{{social_obj.platform}}"></a>
+            {% endfor %}
+          </div>
+          <span class="topbar-child1">Free shipping for standard order over $100</span>
+          <div class="topbar-child2">
+            <span class="topbar-email">{{ request.user.email }}</span>
+          </div>
+        </div>
+        <div class="wrap_header">
+          <a href="index.html" class="logo"><img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO" /></a>
+
+          <div class="wrap_menu">
+            <nav class="menu">
+              <ul class="main_menu">
+                <li>
+                  <a href="{% url "product-page" %}">Products</a>
+                </li>
+                <li>
+                  <a href="{% url "blog-page" %}">Blog</a>
+                </li>
+                <li>
+                  <a href="{% url "about-page" %}">About</a>
+                </li>
+                <li>
+                  <a href="{% url "contact-page" %}">Contact</a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="header-icons">
+
+            <div class="header-wrapicon1">
+              {% if request.user.is_authenticated %}
+                <img src="{{request.user.profile_img.url }}" class="header-icon1 js-show-header-dropdown" alt="ICON" />
+              {% else %}
+              <a href="javascript:void(0)" class="js-show-header-dropdown">Login</a>
+
+              {% endif %}
+              
+              <div class="header-cart header-dropdown">
+                
+              </div>
+            </div>
+
+            <span class="linedivide1"></span>
+
+            <div class="header-wrapicon2">
+              <img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON" />
+              <span class="header-icons-noti">0</span>
+              <div class="header-cart header-dropdown">
+                <ul id="cart-bucket" class="header-cart-wrapitem">
+
+                </ul>
+                <div class="header-cart-total">Total: $75.00</div>
+                <div class="header-cart-buttons">
+                  <div class="header-cart-wrapbtn">
+                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">View Cart</a>
+                  </div>
+                  <div class="header-cart-wrapbtn">
+                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Check Out</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap_header_mobile">
+        <a href="index.html" class="logo-mobile"><img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO" /></a>
+
+        <div class="btn-show-menu">
+          <div class="header-icons-mobile">
+            <a href="#" class="header-wrapicon1 dis-block"><img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON" /></a>
+            <span class="linedivide2"></span>
+            <div class="header-wrapicon2">
+              <img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON" />
+              <span class="header-icons-noti">0</span>
+
+              <div class="header-cart header-dropdown">
+                <ul class="header-cart-wrapitem">
+                  <li class="header-cart-item">
+                    <div class="header-cart-item-img">
+                      <img src="{% static 'images/item-cart-01.jpg' %}" alt="IMG" />
+                    </div>
+                    <div class="header-cart-item-txt">
+                      <a href="#" class="header-cart-item-name">White Shirt With Pleat Detail Back</a>
+                      <span class="header-cart-item-info">1 x $19.00</span>
+                    </div>
+                  </li>
+                  <li class="header-cart-item">
+                    <div class="header-cart-item-img">
+                      <img src="{% static 'images/item-cart-02.jpg' %}" alt="IMG" />
+                    </div>
+                    <div class="header-cart-item-txt">
+                      <a href="#" class="header-cart-item-name">Converse All Star Hi Black Canvas</a>
+                      <span class="header-cart-item-info">1 x $39.00</span>
+                    </div>
+                  </li>
+                  <li class="header-cart-item">
+                    <div class="header-cart-item-img">
+                      <img src="{% static 'images/item-cart-03.jpg' %}" alt="IMG" />
+                    </div>
+                    <div class="header-cart-item-txt">
+                      <a href="#" class="header-cart-item-name">Nixon Porter Leather Watch In Tan</a>
+                      <span class="header-cart-item-info">1 x $17.00</span>
+                    </div>
+                  </li>
+                </ul>
+                <div class="header-cart-total">Total: $75.00</div>
+                <div class="header-cart-buttons">
+                  <div class="header-cart-wrapbtn">
+                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">View Cart</a>
+                  </div>
+                  <div class="header-cart-wrapbtn">
+                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Check Out</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-side-menu">
+        <nav class="side-menu">
+          <ul class="main-menu">
+            <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+              <span class="topbar-child1">Free shipping for standard order over $100</span>
+            </li>
+            <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+              <div class="topbar-child2-mobile">
+                <span class="topbar-email">fashe@example.com</span>
+                <div class="topbar-language rs1-select2">
+                  <select class="selection-1 select2-hidden-accessible" name="time" tabindex="-1" aria-hidden="true">
+                    <option>USD</option>
+                    <option>EUR</option>
+                  </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-time-a1-container"><span class="select2-selection__rendered" id="select2-time-a1-container" title="USD">USD</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-topbar-mobile p-l-10">
+              <div class="topbar-social-mobile">
+                <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+              </div>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="index.html">Home</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="index.html">Homepage V1</a>
+                </li>
+                <li>
+                  <a href="home-02.html">Homepage V2</a>
+                </li>
+                <li>
+                  <a href="home-03.html">Homepage V3</a>
+                </li>
+              </ul>
+              <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="product.html">Shop</a>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="product.html">Sale</a>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="cart.html">Features</a>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="blog.html">Blog</a>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="about.html">About</a>
+            </li>
+            <li class="item-menu-mobile">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div>
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% block pageContent %}{% endblock %}
+
+    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+      <div class="flex-w p-b-90">
+        <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
+          <h4 class="s-text12 p-b-30">GET IN TOUCH</h4>
+          <div>
+            <p class="s-text7 w-size27">Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
+            <div class="flex-m p-t-30">
+              {% for social_obj in social_objs  %}
+                <a target="_blank" href="{{social_obj.url}}" class="fs-18 color1 p-r-20 fa fa-{{social_obj.platform}}"></a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+          <h4 class="s-text12 p-b-30">Categories</h4>
+          <ul>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Men</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Women</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Dresses</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Sunglasses</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+          <h4 class="s-text12 p-b-30">Links</h4>
+          <ul>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Search</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">About Us</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Contact Us</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Returns</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+          <h4 class="s-text12 p-b-30">Help</h4>
+          <ul>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Track Order</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Returns</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">Shipping</a>
+            </li>
+            <li class="p-b-9">
+              <a href="#" class="s-text7">FAQs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
+          <h4 class="s-text12 p-b-30">Newsletter</h4>
+          <form>
+            <div class="effect1 w-size9">
+              <input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com" />
+              <span class="effect1-line"></span>
+            </div>
+            <div class="w-size2 p-t-20">
+              <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="t-center p-l-15 p-r-15">
+        <a href="#"><img class="h-size2" src="{% static 'images/icons/paypal.png' %}" alt="IMG-PAYPAL" /></a>
+        <a href="#"><img class="h-size2" src="{% static 'images/icons/visa.png' %}" alt="IMG-VISA" /></a>
+        <a href="#"><img class="h-size2" src="{% static 'images/icons/mastercard.png' %}" alt="IMG-MASTERCARD" /></a>
+        <a href="#"><img class="h-size2" src="{% static 'images/icons/express.png' %}" alt="IMG-EXPRESS" /></a>
+        <a href="#"><img class="h-size2" src="{% static 'images/icons/discover.png' %}" alt="IMG-DISCOVER" /></a>
+        <div class="t-center s-text8 p-t-20">Copyright © 2017 Colorlib. All rights reserved.</div>
+      </div>
+    </footer>
+    <div class="btn-back-to-top bg0-hov" id="myBtn" style="display: flex;">
+      <span class="symbol-btn-back-to-top">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+      </span>
+    </div>
+    
+ 
+    <script>
+      const user_id = {{request.user.id}}
+    </script>
+    
+    <script type="text/javascript" src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+
+    {% block customJs %}
+
+    {% endblock  %}
+  
+
+  </body>
+</html>

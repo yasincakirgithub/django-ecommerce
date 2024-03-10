@@ -1,0 +1,26 @@
+<div class="rightbar">
+
+    <div class="pos-relative bo11 of-hidden">
+        <form method="GET" action="{% url 'blog-page' %}">
+          <input class="s-text7 size16 p-l-23 p-r-50" type="text" name="blog-title" placeholder="Search" />
+          <button type="submit" class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4"><i class="fs-13 fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+
+    <h4 class="m-text23 p-t-56 p-b-34">Categories</h4>
+    <ul>
+        {% for popular_category in popular_categories  %}
+            <li class="p-t-6 p-b-8 bo6">
+            <a href="{% url 'blog-page' %}?blog-category={{popular_category.category__id}}" class="s-text13 p-t-5 p-b-5">{{popular_category.category__name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h4 class="m-text23 p-t-50 p-b-25">Tags</h4>
+    <div class="wrap-tags flex-w">
+        {% for popular_tag in popular_tags  %}
+            <a href="{% url 'blog-page' %}?blog-tag={{popular_tag.tags__id}}" class="tag-item">{{popular_tag.tags__name}}</a>
+        {% endfor %}
+    </div>
+
+</div>

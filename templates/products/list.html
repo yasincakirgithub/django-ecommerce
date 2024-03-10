@@ -1,0 +1,75 @@
+{% extends 'layouts/main_layout.html' %}
+{% load static %}
+
+{% block customJs %}
+
+{% endblock %}
+
+{% block customTitle %}
+  Products
+{% endblock %}
+
+{% block pageContent %}
+  <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url('/static/images/heading-pages-02.jpg');">
+    <h2 class="l-text2 t-center">Products</h2>
+    <p class="m-text13 t-center">Lorem İpsum</p>
+  </section>
+
+  <section class="bgwhite p-t-55 p-b-65">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+          <div class="leftbar p-r-20 p-r-0-sm">
+            <h4 class="m-text14 p-b-7">Categories</h4>
+            <ul class="p-b-54">
+
+              {% for popular_category in popular_categories  %}
+                <li class="p-t-4">
+                  <a href="{% url 'product-page' %}?product-category={{popular_category.category__id}}" class="s-text13">{{popular_category.category__name}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="search-product pos-relative bo4 of-hidden">
+              <form method="GET" action="{% url 'product-page' %}">
+                <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="product-name" placeholder="Search Products..." />
+                <button type="submit" class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4"><i class="fs-12 fa fa-search" aria-hidden="true"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+          <div class="flex-sb-m flex-w p-b-35">
+            <div class="flex-w">
+            </div>
+            <span class="s-text8 p-t-5 p-b-5">Showing {{page_obj.start_index}}–{{page_obj.end_index}} of {{page_obj.paginator.count}} results</span>
+          </div>
+
+          <div class="row">
+            {% for product in page_obj.object_list %}
+              <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+                <div class="block2">
+                  <div class="block2-img wrap-pic-w of-hidden pos-relative {% if product.is_new %}block2-labelnew{% endif %}">
+                    <img src="{{ product.images.all.first.image.url }}" alt="IMG-PRODUCT" />
+                    <div class="block2-overlay trans-0-4">
+                      <div class="block2-btn-addcart w-size1 trans-0-4">
+                        <button type="button" onclick="addProductInBucket({{ product.id }},'{{ product.name }}','{% url 'product-detail-page' product.slug %}',1,'{{ product.images.all.first.image.url }}',{{ product.price }})" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="block2-txt p-t-20">
+                    <a href="{% url 'product-detail-page' product.slug %}" class="block2-name dis-block s-text3 p-b-5">{{ product.name }}</a>
+                    <span class="block2-price m-text6 p-r-5">{{ product.currency }}{{ product.price }}</span>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="pagination flex-m flex-w p-t-26">
+            {% include 'utils/_pagination.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
